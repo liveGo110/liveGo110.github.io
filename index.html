@@ -41,12 +41,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
+            flex-wrap: nowrap;
+            overflow: hidden;
         }
 
         .navbar-brand {
             display: flex;
             align-items: center;
             gap: 0.75rem;
+            flex-shrink: 0;
         }
 
         .navbar-logo {
@@ -64,12 +68,15 @@
             font-size: 1.25rem;
             font-weight: 700;
             color: white;
+            white-space: nowrap;
         }
 
         .navbar-links {
             display: flex;
             gap: 2rem;
             align-items: center;
+            flex-shrink: 1;
+            justify-content: flex-end;
         }
 
         .navbar-link {
@@ -78,6 +85,7 @@
             font-size: 0.95rem;
             opacity: 0.9;
             transition: opacity 0.3s ease;
+            white-space: nowrap;
         }
 
         .navbar-link:hover {
@@ -352,32 +360,43 @@
             }
 
             .navbar-container {
-                padding: 0 2rem;
-                flex-wrap: wrap;
+                padding: 0 1.5rem;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: nowrap !important;
+                gap: 0.5rem;
+                overflow: visible;
             }
 
             .navbar-brand {
                 gap: 0.5rem;
+                flex-shrink: 0;
+                min-width: 0;
             }
 
             .navbar-logo {
                 width: 32px;
                 height: 32px;
+                flex-shrink: 0;
             }
 
             .navbar-appname {
-                font-size: 0.95rem;
+                font-size: 0.8rem;
+                white-space: nowrap !important;
             }
 
             .navbar-links {
-                gap: 1rem;
-                margin-top: 0.5rem;
-                width: 100%;
+                gap: 0.5rem;
+                flex-shrink: 1;
                 justify-content: flex-end;
+                flex-wrap: nowrap !important;
+                display: flex !important;
             }
 
             .navbar-link {
-                font-size: 0.8rem;
+                font-size: 0.65rem;
+                white-space: nowrap !important;
             }
 
             .footer {
@@ -392,16 +411,47 @@
         }
 
         @media (max-width: 480px) {
+            .navbar {
+                padding: 1rem 0;
+            }
+
             .navbar-container {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
+                padding: 0 1rem;
+                flex-direction: row !important;
+                justify-content: space-between;
+                align-items: center;
+                gap: 0.3rem;
+                flex-wrap: nowrap !important;
+            }
+
+            .navbar-brand {
+                gap: 0.3rem;
+                flex: 0 0 auto;
+                display: flex !important;
+            }
+
+            .navbar-logo {
+                width: 26px;
+                height: 26px;
+                flex-shrink: 0;
+            }
+
+            .navbar-appname {
+                font-size: 0.7rem;
+                white-space: nowrap !important;
             }
 
             .navbar-links {
-                width: 100%;
-                justify-content: space-between;
-                margin-top: 0;
+                gap: 0.4rem;
+                justify-content: flex-end;
+                flex: 0 1 auto;
+                display: flex !important;
+                flex-wrap: nowrap !important;
+            }
+
+            .navbar-link {
+                font-size: 0.6rem;
+                white-space: nowrap !important;
             }
 
             .hero h1 {
@@ -448,7 +498,7 @@
         </nav>
         <div class="hero-content">
             <h1>Record Your Romantic Moments</h1>
-            <p>Track, analyze, and understand your intimate life with privacy and care</p>
+            <p>Track1, analyze, and understand your intimate life with privacy and care</p>
         </div>
     </section>
 
